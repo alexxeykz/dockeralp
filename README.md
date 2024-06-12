@@ -143,23 +143,26 @@ e3227d68030d: Pull complete
 Digest: sha256:69f8c2c72671490607f52122be2af27d4fc09657ff57e42045801aa93d2090f7
 Status: Downloaded newer image for nginx:alpine
 docker.io/library/nginx:alpine
-
+```
 Проверим наличие образа:
+```
 REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
 nginx         alpine    70ea0d8cc530   11 days ago     48.3MB
 hello-world   latest    d2c94e258dcb   13 months ago   13.3kB
-
+```
 Запустим контейнер:
+```
 root@docker:/# docker run --name alexxeykz-nginx -p 8080:80 -d nginx:alpine
 7f1d053879d8ccef6ec7641b6afb5d5d44e7a2df5dd053e0662c70a404ad7940
-
+```
 Проверим запущенные контейнеры
+```
 root@docker:/# docker ps -a
 CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                      PORTS                                   NAMES
 7f1d053879d8   nginx:alpine   "/docker-entrypoint.…"   37 seconds ago   Up 37 seconds               0.0.0.0:8080->80/tcp, :::8080->80/tcp   alexxeykz-nginx
 0ed256c39dbe   hello-world    "/hello"                 35 minutes ago   Exited (0) 35 minutes ago                                           pensive_keldysh
 cdcf13599257   hello-world    "/hello"                 54 minutes ago   Exited (0) 54 minutes ago                                           keen_brahmagupta
-
+```
 Проверим работу nginx:
 ```
 root@docker:/# curl localhost:8080
