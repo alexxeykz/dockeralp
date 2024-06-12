@@ -218,14 +218,15 @@ root@docker:/dockerapp# curl localhost:8080
 </html>
 ```
 Изменили с дефолтной на свою страницу.
-
+```
 2. Отвечая на вопрос разница образа и контейнера. 
 Образ - это шаблон, на основе которого создается контейнер.
 Контейнер - это среда в которой пользователи могут изолировать приложения от хостовой системы. Эти контейнеры представляют собой компактные портативные хосты.
-
+```
+```
 3.Написан ответ на вопрос: Можно ли в контейнере собрать ядро?
 В Docker-контейнере можно собрать ядро с произвольными патчами, флагами конфигурации и тегом.
-
+```
 4.Собранный образ запушин в docker hub и дана ссылка на репозиторий.
 ```
 root@docker:/dockerapp# docker images
@@ -235,6 +236,7 @@ hello-world   latest    d2c94e258dcb   13 months ago   13.3kB
 ```
 
 Для того чтобы запушить нам сначала нужно присвоить TAG
+```
 root@docker:/dockerapp# docker container ls -a
 CONTAINER ID   IMAGE          COMMAND                  CREATED        STATUS                    PORTS                                   NAMES
 075dce404115   nginx:alpine   "/docker-entrypoint.…"   9 hours ago    Up 9 hours                0.0.0.0:8080->80/tcp, :::8080->80/tcp   alexxeykz-nginx
@@ -243,7 +245,7 @@ cdcf13599257   hello-world    "/hello"                 33 hours ago   Exited (0)
 
 root@docker:/dockerapp# docker commit alexxeykz-nginx alexxeykz/alexxeykz-nginx:alpng
 sha256:51c77fe314c07420afcf2306c6306e296eeb23dc589800a6816a9c5e8a6c7f89
-
+```
 Смотрим images:
 ```
 root@docker:/dockerapp# docker images
